@@ -99,6 +99,7 @@ const propertyConfig = {
 📍 *Ubicación:* Cantalejo, Suba - Bogotá
 ✨ *Lo mejor:* 71m², Estudio, Balcón y zonas sociales completas.
 
-🔗 *Ver más detalles:* 👇`
+🔗 *Ver más detalles:* 👇
+https://ap-cantalejo-bogota.netlify.app/`
   }
 };
