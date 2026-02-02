@@ -376,8 +376,10 @@
         cursor: pointer;
         transition: transform 0.2s, border-color 0.2s;
       }
-      .thumbnail:hover {
-        transform: scale(1.05);
+      @media (hover: hover) {
+        .thumbnail:hover {
+          transform: scale(1.05);
+        }
       }
       .thumbnail.active {
         border-color: #d4af37;
@@ -517,7 +519,7 @@
            border: 1px solid rgba(255, 255, 255, 0.5);
            /* Deep shadow for pop */
            box-shadow: 
-             0 8px 32px rgba(0, 0, 0, 0.2),
+             0 4px 12px rgba(0, 0, 0, 0.15),
              inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
         }
         
@@ -555,7 +557,14 @@
         .footer {
            background: linear-gradient(160deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.35) 100%);
            border: 1px solid rgba(255, 255, 255, 0.5);
-           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+        }
+
+        /* Disable transforms for better 2D performance on mobile */
+        .glass-card, .highlight-box {
+          transform: none !important;
+          will-change: auto !important;
+          transition: none !important;
         }
       }
 
