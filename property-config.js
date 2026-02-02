@@ -19,7 +19,7 @@ const propertyConfig = {
   // 2. Encabezado Principal
   infoPrincipal: {
     headerBadge: "❤️ ¡Oportunidad en Suba! 🏡",
-    tituloHtml: "Acogedor Apartamento en <span class='match'>Cantalejo</span>",
+    tituloHtml: "Acogedor Apartamento en Cantalejo",
     precioVenta: "$470.000.000",
     valorAdmin: "$500.000",
     labelExtra: "💵 Administración"
