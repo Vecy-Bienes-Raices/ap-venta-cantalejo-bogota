@@ -11,7 +11,7 @@ const propertyConfig = {
     description: "Oportunidad en Cantalejo, Suba. Apartamento de 71m², 3 habitaciones, estudio y balcón. Conjunto residencial con gimnasio y BBQ. Cerca a C.C. La Colina.",
     keywords: "Apartamento en Venta, Cantalejo, Suba, Bogotá, 3 Habitaciones, Estudio, Balcón, Gimnasio, La Colina",
     ogUrl: "https://ap-cantalejo-bogota.netlify.app/",
-    ogImage: "assets/12.jpeg",
+    ogImage: "assets/social-cover.jpeg",
     author: "Vecy Bienes Raíces",
     copyright: "2026"
   },
@@ -84,7 +84,7 @@ const propertyConfig = {
   // 8. Multimedia
   multimedia: {
     videoUrl: "assets/Apartamento en venta en Cantalejo Bogotá.mp4",
-    videoThumbnail: "assets/12.jpeg",
+    videoThumbnail: "assets/social-cover.jpeg",
     imagesCount: 24, // Se mostrarán las 24 fotos disponibles
     imagePrefix: "assets/",
     imageExtension: ".jpeg",
