@@ -74,7 +74,7 @@ const propertyConfig = {
       <ul class="roi-list">
         <li>💰 <strong>Precio:</strong> $470 Millones (Negociables).</li>
         <li>📝 <strong>Estado Jurídico:</strong> Crédito hipotecario vigente.</li>
-        <li>🤝 <strong>Trato:</strong> Directo con el propietario.</li>
+
         <li>🔑 <strong>Estado:</strong> Actualmente ocupado.</li>
       </ul>
       <p>Una excelente opción tanto para vivienda familiar como para inversión por su alta valorización en el sector del Norte de Bogotá.</p>
