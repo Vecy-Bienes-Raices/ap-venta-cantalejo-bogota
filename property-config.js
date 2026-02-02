@@ -93,12 +93,12 @@ const propertyConfig = {
 
   // 9. Botón Compartir
   share: {
-    whatsappText: `🏡 *¡HOLA! ME INTERESA EL APARTAMENTO EN CANTALEJO:*
+    whatsappText: `🏡 *APARTAMENTO EN VENTA CANTALEJO, BOGOTÁ:*
     
 💰 *Precio:* $470.000.000
 📍 *Ubicación:* Cantalejo, Suba - Bogotá
 ✨ *Lo mejor:* 71m², Estudio, Balcón y zonas sociales completas.
 
-🔗 *Quiero ver más detalles:*`
+🔗 *Ver más detalles:* 👇`
   }
 };
