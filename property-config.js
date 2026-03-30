@@ -81,7 +81,7 @@ const propertyConfig = {
       <p>Una excelente opción tanto para vivienda familiar como para inversión por su alta valorización en el sector del Norte de Bogotá.</p>
       <div style="margin-top: 30px; text-align: center;">
           <a href="analisis.html" class="btn-analisis">
-             📋 VER FICHA TÉCNICA (PDF)
+             📋 VER MÁS DETALLES DEL APARTAMENTO
           </a>
       </div>
     </div>`
