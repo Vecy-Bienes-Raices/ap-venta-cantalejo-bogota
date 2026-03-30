@@ -427,31 +427,31 @@
         pointer-events: none;
       }
 
+      /* --- BOTÓN COMPARTIR (GOLD DNA) --- */
       #shareBtn {
-        background: linear-gradient(180deg, #FFD700 0%, #FDB931 50%, #DAA520 100%);
-        color: #3E2723;
-        border: none;
-        padding: 18px 50px;
-        font-size: 18px;
-        font-weight: 900;
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        border-radius: 50px;
-        cursor: pointer;
-        min-width: 280px; 
-        justify-content: center;
-        text-align: center;
-        box-shadow: 
-          0 6px 0 #B8860B, 
-          0 12px 20px rgba(0, 0, 0, 0.3),
-          inset 0 2px 0 rgba(255, 255, 255, 0.5);
-        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
-        position: relative;
-        overflow: hidden;
+        background: linear-gradient(180deg, #FFD700 0%, #FDB931 50%, #DAA520 100%) !important;
+        color: #3E2723 !important;
+        border: none !important;
+        padding: 18px 50px !important;
+        font-size: 18px !important;
+        font-weight: 900 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        border-radius: 50px !important;
+        cursor: pointer !important;
+        min-width: 280px !important; 
+        justify-content: center !important;
+        text-align: center !important;
+        box-shadow: 0 6px 0 #B8860B, 0 12px 20px rgba(0, 0, 0, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.5) !important;
+        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) !important;
+        position: relative !important;
+        overflow: hidden !important;
+        margin: 20px auto !important;
+        text-decoration: none !important;
       }
       
       #shareBtn.shared-success {
@@ -482,22 +482,15 @@
       }
 
       #shareBtn:hover {
-        background: linear-gradient(180deg, #FFF8DC 0%, #FFD700 50%, #FFC107 100%);
-        transform: translateY(-4px) scale(1.02);
-        box-shadow: 
-          0 10px 0 #B8860B, 
-          0 20px 40px rgba(255, 215, 0, 0.4),
-          inset 0 2px 0 rgba(255, 255, 255, 0.8);
-        color: #251605;
+        background: linear-gradient(180deg, #FFF8DC 0%, #FFD700 50%, #FFC107 100%) !important;
+        transform: translateY(-4px) scale(1.02) !important;
+        box-shadow: 0 10px 0 #B8860B, 0 20px 40px rgba(255, 215, 0, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.8) !important;
       }
       
       #shareBtn.shared-success:hover {
-        background: linear-gradient(180deg, #86efac 0%, #4ade80 50%, #22c55e 100%);
-        box-shadow: 
-          0 8px 0 #15803d, 
-          0 20px 40px rgba(22, 163, 74, 0.6),
-          inset 0 2px 0 rgba(255, 255, 255, 0.8);
-        color: #ffffff;
+        background: linear-gradient(180deg, #86efac 0%, #4ade80 50%, #22c55e 100%) !important;
+        box-shadow: 0 8px 0 #15803d, 0 20px 40px rgba(22, 163, 74, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.8) !important;
+        color: #ffffff !important;
       }
 
       #shareBtn:hover::after {
@@ -505,10 +498,44 @@
       }
 
       #shareBtn:active {
-        transform: translateY(4px);
-        box-shadow: 
-          0 2px 0 #15803d, 
-          0 4px 10px rgba(0, 0, 0, 0.2);
+        transform: translateY(4px) !important;
+        box-shadow: 0 2px 0 #B8860B, 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+      }
+
+      /* --- BOTÓN ANÁLISIS (ORANGE DNA) --- */
+      .btn-analisis {
+        background: linear-gradient(180deg, #ff8c00 0%, #ff7b00 100%) !important;
+        color: #ffffff !important;
+        border: none !important;
+        padding: 18px 50px !important;
+        font-size: 18px !important;
+        font-weight: 900 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 12px !important;
+        border-radius: 50px !important;
+        cursor: pointer !important;
+        min-width: 280px !important; 
+        justify-content: center !important;
+        text-align: center !important;
+        box-shadow: 0 6px 0 #b35900, 0 12px 20px rgba(0, 0, 0, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.3) !important;
+        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        text-transform: uppercase !important;
+        text-decoration: none !important;
+        margin: 10px auto !important;
+        position: relative !important;
+        overflow: hidden !important;
+      }
+      
+      .btn-analisis:hover {
+        background: linear-gradient(180deg, #FFA726 0%, #FF8F00 50%, #EF6C00 100%) !important;
+        transform: translateY(-4px) scale(1.02) !important;
+        box-shadow: 0 10px 0 #BF360C, 0 20px 30px rgba(191, 54, 12, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.5) !important;
+      }
+
+      .btn-analisis:active {
+        transform: translateY(2px) !important;
+        box-shadow: 0 2px 0 #BF360C, 0 4px 10px rgba(191, 54, 12, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.5) !important;
       }
 
       @media (max-width: 600px) {
