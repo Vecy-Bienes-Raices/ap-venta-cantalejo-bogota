@@ -5,12 +5,13 @@
  */
 
 const propertyConfig = {
-  // 1. SEO (Para Google y compartir en redes)
+  // 1. SEO Mágico: Algoritmos de Búsqueda y Redes (Alto CTR)
   seo: {
-    title: "Venta Apartamento Cantalejo Suba - 3 Habitaciones | Vecy Bienes Raíces",
-    description: "Oportunidad en Cantalejo, Suba. Apartamento de 71m², 3 habitaciones, estudio y balcón. Conjunto residencial con gimnasio y BBQ. Cerca a C.C. La Colina.",
-    keywords: "Apartamento en Venta, Cantalejo, Suba, Bogotá, 3 Habitaciones, Estudio, Balcón, Gimnasio, La Colina",
+    title: "Apartamento en Venta Cantalejo Suba | Oportunidad Norte de Bogotá",
+    description: "Inversión en Cantalejo. Apartamento iluminado de 71m² (3 Hab + Estudio + Balcón). Zona de alta valorización cerca a C.C. La Colina y zonas comerciales.",
+    keywords: "Venta Apartamento Cantalejo, Inversión Suba Bogotá, Apartamento cerca a La Colina, Vecy Bienes Raíces, Apartamento con Balcón Suba",
     ogUrl: "https://ap-cantalejo-bogota.netlify.app/",
+    propertyId: "ID-BOG-CS01",
     ogImage: "assets/social-cover.jpeg",
     author: "Vecy Bienes Raíces",
     copyright: "2026"
@@ -88,18 +89,28 @@ const propertyConfig = {
     imagesCount: 24, // Se mostrarán las 24 fotos disponibles
     imagePrefix: "assets/",
     imageExtension: ".jpeg",
-    imagesList: []
+    imagesList: [
+      "assets/1.jpeg", "assets/2.jpeg", "assets/3.jpeg", "assets/4.jpeg",
+      "assets/5.jpeg", "assets/6.jpeg", "assets/7.jpeg", "assets/8.jpeg",
+      "assets/9.jpeg", "assets/10.jpeg", "assets/11.jpeg", "assets/12.jpeg",
+      "assets/13.jpeg", "assets/14.jpeg", "assets/15.jpeg", "assets/16.jpeg",
+      "assets/17.jpeg", "assets/18.jpeg", "assets/19.jpeg", "assets/20.jpeg",
+      "assets/21.jpeg", "assets/22.jpeg", "assets/23.jpeg", "assets/24.jpeg"
+    ]
   },
 
   // 9. Botón Compartir
   share: {
-    whatsappText: `🏡 *APARTAMENTO EN VENTA CANTALEJO, BOGOTÁ:*
+    whatsappText: `🏡 *APARTAMENTO EN VENTA CANTALEJO (SUBA) - BOGOTÁ:*
     
-💰 *Precio:* $470.000.000
-📍 *Ubicación:* Cantalejo, Suba - Bogotá
-✨ *Lo mejor:* 71m², Estudio, Balcón y zonas sociales completas.
+💰 *Precio: $470.000.000* (Negociables)
+📍 *Ubicación:* Sector Cantalejo, Cerca a C.C. La Colina
+📏 *Distribución:* 71m², 3 Habitaciones + Estudio + Balcón
+✨ *Destacado:* Alta valorización. Conjunto con Gimnasio, Terraza BBQ Panorámica y vista libre.
 
-🔗 *Ver más detalles:* 👇
-https://ap-cantalejo-bogota.netlify.app/`
+🔗 *Mira las fotos, video y Ficha Técnica aquí:* 👇
+https://ap-cantalejo-bogota.netlify.app/
+
+#ApartamentoEnVentaBogota #CantalejoSuba #InversionInmobiliaria #ViviendaFamiliarBogota #LaColinaSuba #VecyBienesRaices`
   }
 };
