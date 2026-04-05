@@ -1,4 +1,4 @@
-﻿/**
+/**
  * 🌍 CONFIGURACIÓN UNIVERSAL VECY - APARTAMENTO CANTALEJO
  * 
  * Datos actualizados: 04/04/2026
@@ -29,7 +29,7 @@ const propertyConfig = {
   // 3. Rejilla de Detalles
   detalles: [
     { label: "Área Const.", value: "71 m²", icon: "📐" },
-    { label: "Área Privada", value: "64 m²", icon: "🏠" },
+    { label: "Área Privada", value: "64.44 m²", icon: "🏠" },
     { label: "Habitaciones", value: "3", icon: "🛏️" },
     { label: "Baños", value: "2", icon: "🚿" },
     { label: "Parqueadero", value: "1 (Cubierto)", icon: "🚗" },

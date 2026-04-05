@@ -758,6 +758,53 @@
         border: 0;
         border-radius: 15px;
       }
+
+      /* --- Estilos para Impresión PDF (PERFECT ARCHITECTURE) --- */
+      @media print {
+        @page { size: A4 portrait; margin: 1.5cm; }
+        body { background: #ffffff !important; color: #000000 !important; max-width: 100% !important; padding: 0 !important; margin: 0 !important; }
+        body::before { display: none !important; }
+        * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        .glass-card, .highlight-box, .precio-section, .spec-item, .amenity-item, .slider-image, img, p, h1, h2, h3, h4, li {
+          page-break-inside: avoid !important; break-inside: avoid !important;
+        }
+        .section-title, h1, h2, h3, h4 { page-break-after: avoid !important; break-after: avoid !important; }
+        .glass-card {
+          background: transparent !important; border: 1px solid #e0e0e0 !important;
+          box-shadow: none !important; backdrop-filter: none !important;
+          margin-bottom: 20px !important; padding: 15px !important; display: block !important;
+        }
+        .glass-card::before { display: none !important; }
+        .slider-arrow, .thumbnail-wrapper, #shareBtn, .lightbox-overlay, .video-wrapper, .map-container, .btn-analisis {
+          display: none !important;
+        }
+        .section-title:has(+ .video-wrapper),
+        .section-title:has(+ .map-container),
+        .section-title:has(+ .glass-card.video-wrapper),
+        .section-title:has(+ .glass-card.map-container) { display: none !important; }
+        .specs-grid { display: block !important; text-align: center; }
+        .spec-item {
+          display: inline-block !important; width: 31% !important; margin: 1% !important;
+          vertical-align: top; background: #f9f9f9 !important; border: 1px solid #ddd !important;
+          box-shadow: none !important; box-sizing: border-box !important; padding: 8px !important;
+        }
+        .amenities-list { display: block !important; }
+        .amenity-item {
+          display: inline-block !important; width: 47% !important; margin: 1% !important;
+          vertical-align: top; background: transparent !important; border: 1px solid #eee !important;
+          box-shadow: none !important; color: #000 !important; box-sizing: border-box !important; padding: 8px !important;
+        }
+        .slider-container { display: block !important; height: auto !important; box-shadow: none !important; margin-bottom: 0 !important; text-align: center; }
+        .slider-image {
+          display: inline-block !important; width: 48% !important; height: auto !important;
+          margin: 1% !important; border-radius: 8px !important; vertical-align: top !important;
+          opacity: 1 !important; visibility: visible !important; transform: none !important; animation: none !important;
+        }
+        .header h1, .header .match, .spec-item .label, .footer p, .footer .cta { text-shadow: none !important; }
+        .description, .spec-item .label, .spec-item .value { color: #000000 !important; }
+        .highlight-box { border: 1px solid #d4af37 !important; box-shadow: none !important; display: block !important; }
+        .precio-section { box-shadow: none !important; display: flex !important; }
+      }
     </style>
   </head>
   <body>
