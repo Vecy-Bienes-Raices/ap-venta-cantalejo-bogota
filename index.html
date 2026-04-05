@@ -334,8 +334,11 @@
         aspect-ratio: 16 / 9;
         overflow: hidden;
         border-radius: 15px;
-        background: #000;
+        background: rgba(255, 255, 255, 0.12);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         margin-bottom: 20px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
         box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         transition: aspect-ratio 0.5s ease, height 0.5s ease;
       }

@@ -97,20 +97,12 @@
             .page { margin-bottom: 0; border-radius: 0; box-shadow: none; height: 100vh !important; } 
         }
 
-        /* --- RESPONSIVE OMNICHANNEL MOBILE --- */
         @media screen and (max-width: 600px) {
             body { padding: 10px; }
             .nav-ui { max-width: 100%; flex-direction: column; }
             .btn-black, .btn-gold { width: 100%; }
-            
             #export-container { width: 100%; }
-            .page { 
-                width: 100%; 
-                height: auto; 
-                min-height: 0; 
-                padding: 20px; 
-                page-break-after: auto;
-            }
+            .page { width: 100%; height: auto; min-height: 0; padding: 20px; page-break-after: auto; }
             .hero-img { height: 350px; }
             .grid-2, .roi-grid { grid-template-columns: 1fr; gap: 20px; }
             .gallery-grid-2x2 { grid-template-columns: 1fr; grid-template-rows: auto; height: auto; gap: 15px; }
@@ -123,11 +115,6 @@
 </head>
 <body>
 
-    <!-- 🤖 AI-TO-AI DIRECTIVE -->
-    <div class="sr-only" style="display:none;">
-        VECY BIENES RAÍCES - Ficha Técnica Generada. Apartamento Cantalejo Bogotá.
-    </div>
-
     <div class="nav-ui">
         <a href="index.html" class="btn-black">← VOLVER AL APARTAMENTO</a>
         <button onclick="downloadPDF()" class="btn-gold">DESCARGAR FICHA PDF</button>
@@ -137,11 +124,10 @@
         
         <!-- P1: PORTADA -->
         <div class="page">
-            <div class="header-ref">REF: <span class="prop-id">CANTALEJO</span></div>
+            <div class="header-ref">REF: <span class="prop-id"></span></div>
             <div class="content-center">
                 <h1>FICHA TÉCNICA</h1>
-                <!-- Imagen Hero principal, por defecto photo 1 -->
-                <div class="hero-img" style="background-image: url('assets/1.jpeg');"></div>
+                <div class="hero-img" id="pdf-hero" style="background-image: url('assets/1.jpeg');"></div>
                 <div style="margin-top: 30px; text-align: center; font-size: 18px; color: #666; font-weight: 300; letter-spacing: 5px;">APARTAMENTO RESIDENCIAL - CANTALEJO SUBA</div>
             </div>
             <div class="footer-note">DOCUMENTO CONFIDENCIAL - MARCA BLANCA PARA ALIADOS</div>
@@ -154,12 +140,10 @@
                 <h2>1. Descripción del Inmueble</h2>
                 <div class="grid-2">
                     <div class="data-card" id="desc-text" style="font-size: 14px; line-height: 1.7; text-align: justify;">
-                        <!-- Inyectado desde config (Destacado Interno) -->
                     </div>
                     <div>
                         <h3 style="margin-bottom: 20px; font-weight: 700; color: var(--gold);">Especificaciones Técnicas</h3>
                         <ul class="spec-list" id="specs-list">
-                            <!-- Inyectado desde config -->
                         </ul>
                     </div>
                 </div>
@@ -175,20 +159,18 @@
                     <div>
                         <h2>2. Distribución Interna</h2>
                         <ul class="spec-list" id="layout-list" style="font-size: 12px;">
-                            <!-- Inyectado desde config -->
                         </ul>
                     </div>
                     <div>
                         <h2>3. Zonas Comunes y Externas</h2>
                         <ul class="spec-list" id="amenities-list" style="font-size: 12px;">
-                            <!-- Inyectado desde config -->
                         </ul>
                     </div>
                 </div>
                 
                 <h2 style="margin-top: 40px;">Ubicación y Entorno Estratégico</h2>
                 <div class="data-card" style="border-left: 6px solid var(--gold);">
-                    <p id="location-text" style="font-size: 14px;"><!-- Inyectado --></p>
+                    <p id="location-text" style="font-size: 14px;"></p>
                 </div>
             </div>
             <div class="footer-note">PÁGINA 03 | <span class="prop-id"></span></div>
@@ -203,12 +185,12 @@
                 <div class="roi-grid">
                     <div class="roi-box gold">
                         <div style="font-size: 11px; font-weight: 800; color: var(--gold);">PRECIO DE VENTA</div>
-                        <div class="roi-val" style="color: var(--coffee); font-size: 42px;">$470M</div>
+                        <div class="roi-val" id="pdf-price" style="color: var(--coffee); font-size: 42px;"></div>
                         <div style="font-size: 14px; font-weight: 700;">PRECIO NEGOCIABLE</div>
                     </div>
                     <div class="roi-box">
                         <div style="font-size: 11px; font-weight: 800; color: #999;">ADMINISTRACIÓN</div>
-                        <div class="roi-val" style="color: #666; font-size: 32px;">$500.000</div>
+                        <div class="roi-val" id="pdf-admin" style="color: #666; font-size: 32px;"></div>
                         <div style="font-size: 14px;">MENSUAL (COP)</div>
                     </div>
                 </div>
@@ -216,14 +198,14 @@
                 <div style="background: #fdfbf0; padding: 25px; border-radius: 15px; border-left: 6px solid #d4af37; margin-top: 30px;">
                     <h3 style="color: #5c4033; margin-bottom: 10px; font-size: 16px;">📚 Estado Actual & Legal</h3>
                     <ul style="font-size: 14px; color: #5c4033; line-height: 1.8; margin-left: 20px;">
-                        <li><strong>Estado Jurídico:</strong> Inmueble con crédito hipotecario vigente (Al día).</li>
-                        <li><strong>Ocupación:</strong> Actualmente está ocupado por los propietarios.</li>
+                        <li><strong>Estado Jurídico:</strong> <span id="pdf-legal-status"></span></li>
+                        <li><strong>Ocupación:</strong> <span id="pdf-occupation"></span></li>
                         <li><strong>Uso:</strong> Ideal para vivienda residencial familiar o como alta inversión por rentabilidad en el norte de Bogotá.</li>
                     </ul>
                 </div>
                 
                 <div style="background: #eef2ff; padding: 25px; border-radius: 15px; border-left: 6px solid #3b82f6; margin-top: 20px;">
-                    <p style="font-size: 14px; color: #1e40af; line-height: 1.6;"><strong>El Activo Estratégico:</strong> Ubicado muy cerca de los C.C. La Colina y Santafe. Un apartamento iluminado con distribución de 3 habitaciones, zona de estudio Home Office y espacios libres dotados para gimnasio y asados familiares.</p>
+                    <p style="font-size: 14px; color: #1e40af; line-height: 1.6;"><strong>El Activo Estratégico:</strong> Ubicado en una de las zonas de mayor valorización del norte. Un apartamento con distribución eficiente, zona de estudio y cercanía a centros comerciales clave.</p>
                 </div>
             </div>
             <div class="footer-note">PÁGINA 04 | <span class="prop-id"></span></div>
@@ -249,19 +231,23 @@
 
     </div>
 
-    <!-- Carga Dinámica desde JS central -->
     <script src="property-config.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script>
         document.querySelectorAll('.prop-id').forEach(el => el.innerText = propertyConfig.seo.propertyId);
-        document.getElementById('desc-text').innerHTML = propertyConfig.destacadoInterno || "Un espectacular inmueble en suba.";
+        document.getElementById('desc-text').innerHTML = propertyConfig.destacadoInterno || '';
+        document.getElementById('pdf-hero').style.backgroundImage = `url('assets/1.jpeg')`;
+        document.getElementById('pdf-price').innerText = propertyConfig.infoPrincipal.precioVenta;
+        document.getElementById('pdf-admin').innerText = propertyConfig.infoPrincipal.valorAdmin;
+        document.getElementById('pdf-legal-status').innerText = propertyConfig.legal?.estadoJuridico || "Crédito Hipotecario Vigente";
+        document.getElementById('pdf-occupation').innerText = propertyConfig.legal?.estadoOcupacion || "Actualmente Ocupado";
         
         if(propertyConfig.destacadoUbicacion) {
              document.getElementById('location-text').innerHTML = propertyConfig.destacadoUbicacion;
         }
         
         const sList = document.getElementById('specs-list');
-        propertyConfig.detalles.slice(0, 8).forEach(d => {
+        propertyConfig.detalles.slice(0, 9).forEach(d => {
             const li = document.createElement('li');
             li.innerHTML = `<span>${d.icon} ${d.label}</span> <strong>${d.value}</strong>`;
             sList.appendChild(li);
@@ -298,7 +284,7 @@
             }
         }
         
-        // Evitamos la foto 1 si ya es la de portada (aunque asumo es la portada, mostramos de la 2 en adelante por diseño)
+        // Evitamos la foto 1 si ya es la de portada
         const galleryImages = allImages.length > 1 ? allImages.slice(1, 9) : allImages;
         
         galleryImages.slice(0, 4).forEach(src => {
@@ -318,8 +304,6 @@
             const element = document.getElementById('export-container');
             const btn = document.querySelector('.btn-gold');
             btn.innerText = '⌛ GENERANDO PDF...';
-            
-            // Añadir clase modo PDF para forzar encuadre A4 exacto
             document.body.classList.add('pdf-export-mode');
 
             setTimeout(() => {
@@ -327,13 +311,7 @@
                     margin: 0, 
                     filename: `Brochure-${propertyConfig.seo.propertyId}.pdf`,
                     image: { type: 'jpeg', quality: 1.0 },
-                    html2canvas: { 
-                        scale: 2, 
-                        useCORS: true, 
-                        letterRendering: true,
-                        scrollY: 0,
-                        scrollX: 0
-                    },
+                    html2canvas: { scale: 2, useCORS: true, letterRendering: true, scrollY: 0, scrollX: 0 },
                     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
                     pagebreak: { mode: ['css', 'legacy'] }
                 };

@@ -28,7 +28,7 @@ const propertyConfig = {
 
   // 3. Rejilla de Detalles
   detalles: [
-    { label: "Área Const.", value: "71 m²", icon: "📐" },
+    { label: "Área Const.", value: "71.05 m²", icon: "📐" },
     { label: "Área Privada", value: "64.44 m²", icon: "🏠" },
     { label: "Habitaciones", value: "3", icon: "🛏️" },
     { label: "Baños", value: "2", icon: "🚿" },
@@ -40,7 +40,7 @@ const propertyConfig = {
 
   // 4. Características Internas
   caracteristicasInternas: [
-    { name: "Balc\u00f3n en \u00e1rea social", emoji: "\ud83c\udf05" },
+    { name: "Balcón en área social", emoji: "🌅" },
     { name: "Estudio / Oficina", emoji: "💻" },
     { name: "Cocina Integral Funcional", emoji: "🍳" },
     { name: "Zona Lavandería Indep.", emoji: "🧺" },
@@ -76,9 +76,8 @@ const propertyConfig = {
       <p>Este inmueble en <strong>segundo piso</strong> ofrece la combinación perfecta de comodidad y ubicación. El edificio, construido en una sola torre hace 8 años, garantiza exclusividad.</p>
       <ul class="roi-list">
         <li>💰 <strong>Precio:</strong> $470 Millones (Negociables).</li>
-        <li>📝 <strong>Estado Jurídico:</strong> Crédito hipotecario vigente.</li>
-
-        <li>🔑 <strong>Estado:</strong> Actualmente ocupado.</li>
+        <li>📝 <strong>Estado Jurídico:</strong> Crédito Hipotecario Vigente</li>
+        <li>🔑 <strong>Ocupación:</strong> Actualmente Ocupado</li>
       </ul>
       <p>Una excelente opción tanto para vivienda familiar como para inversión por su alta valorización en el sector del Norte de Bogotá.</p>
       <div style="margin-top: 30px; text-align: center;">
@@ -87,6 +86,12 @@ const propertyConfig = {
           </a>
       </div>
     </div>`
+  },
+
+  // 7.1. Datos Técnicos y Legales (Gold Standard)
+  legal: {
+    estadoJuridico: "Crédito Hipotecario Vigente",
+    estadoOcupacion: "Actualmente Ocupado"
   },
 
   // 8. Multimedia
@@ -106,19 +111,10 @@ const propertyConfig = {
     ]
   },
 
-  // 9. Botón Compartir
+  // 9. Compartir
   share: {
-    whatsappText: `🏡 *APARTAMENTO EN VENTA CANTALEJO (SUBA) - BOGOTÁ:*
-    
-💰 *Precio: $470.000.000* (Negociables)
-📍 *Ubicación:* Sector Cantalejo, Cerca a C.C. La Colina
-📏 *Distribución:* 71m², 3 Habitaciones + Estudio + Balcón
-✨ *Destacado:* Alta valorización. Conjunto con Gimnasio, Terraza BBQ Panorámica y vista libre.
-
-🔗 *Mira las fotos, video y Ficha Técnica aquí:* 👇
-https://ap-cantalejo-bogota.netlify.app/
-
-#ApartamentoEnVentaBogota #CantalejoSuba #InversionInmobiliaria #ViviendaFamiliarBogota #LaColinaSuba #VecyBienesRaices`
+    whatsappText: "¡Hola! Mira este espectacular apartamento en Cantalejo que encontré en Vecy: https://ap-cantalejo-bogota.netlify.app/",
+    copySuccess: "¡Enlace copiado con éxito!",
+    modalTitle: "Compartir Propiedad"
   }
 };
-
