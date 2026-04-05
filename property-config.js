@@ -26,13 +26,14 @@ const propertyConfig = {
     labelExtra: "💵 Administración"
   },
 
-  // 3. Rejilla de Detalles
+  // 3. Características Principales (Rejilla de Detalles)
   detalles: [
     { label: "Área Const.", value: "71.05 m²", icon: "📐" },
     { label: "Área Privada", value: "64.44 m²", icon: "🏠" },
     { label: "Habitaciones", value: "3", icon: "🛏️" },
     { label: "Baños", value: "2", icon: "🚿" },
     { label: "Parqueadero", value: "1 (Cubierto)", icon: "🚗" },
+    { label: "Depósito", value: "1 (Privado)", icon: "📦" },
     { label: "Antigüedad", value: "8 Años", icon: "🏗️" },
     { label: "Estrato", value: "3", icon: "✨" },
     { label: "Piso", value: "2", icon: "🏢" }
