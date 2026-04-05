@@ -1,7 +1,7 @@
-/**
+﻿/**
  * 🌍 CONFIGURACIÓN UNIVERSAL VECY - APARTAMENTO CANTALEJO
  * 
- * Datos actualizados: 02/02/2026
+ * Datos actualizados: 04/04/2026
  */
 
 const propertyConfig = {
@@ -40,23 +40,25 @@ const propertyConfig = {
 
   // 4. Características Internas
   caracteristicasInternas: [
-    { name: "Balcón Exterior", emoji: "🌅" },
-    { name: "Estudio / Oficina", emoji: "�" },
+    { name: "Balc\u00f3n en \u00e1rea social", emoji: "\ud83c\udf05" },
+    { name: "Estudio / Oficina", emoji: "💻" },
     { name: "Cocina Integral Funcional", emoji: "🍳" },
     { name: "Zona Lavandería Indep.", emoji: "🧺" },
-    { name: "Depósito", emoji: "📦" },
-    { name: "Vista al Parque (Ppal)", emoji: "🌳" }
+    { name: "Depósito", emoji: "📦" }
   ],
   destacadoInterno: "Al recorrer el pasillo, encuentras un espacio de estudio ideal para home office o lectura, conectando perfectamente hacia el área privada. La habitación principal disfruta de vista directa al parque y baño privado.",
 
   // 5. Características Externas
   caracteristicasExternas: [
+    { name: "Vigilancia 24/7", emoji: "🛡️" },
     { name: "Gimnasio Dotado", emoji: "🏋️" },
     { name: "Terraza BBQ Panorámica", emoji: "🍖" },
     { name: "2 Ascensores", emoji: "🛗" },
-    { name: "Portería / Sala Espera", emoji: "🛡️" },
+    { name: "Portería / Sala Espera", emoji: "🏠" },
+    { name: "Acceso Pavimentado", emoji: "🛣️" },
+    { name: "Paradero SITP a media cuadra", emoji: "🚌" },
     { name: "Cerca C.C. La Colina", emoji: "🛍️" },
-    { name: "Parques Cercanos", emoji: "�" }
+    { name: "Parques Cercanos", emoji: "🌳" }
   ],
   destacadoUbicacion: "Ubicado estratégicamente en una zona residencial y comercial privilegiada de Suba. A pasos de centros comerciales como La Colina y Santafé, rodeado de parques y con fácil acceso a comercio variado.",
 
@@ -81,7 +83,7 @@ const propertyConfig = {
       <p>Una excelente opción tanto para vivienda familiar como para inversión por su alta valorización en el sector del Norte de Bogotá.</p>
       <div style="margin-top: 30px; text-align: center;">
           <a href="analisis.html" class="btn-analisis">
-             📋 VER MÁS DETALLES DEL APARTAMENTO
+           📋 VER MÁS DETALLES
           </a>
       </div>
     </div>`
@@ -119,3 +121,4 @@ https://ap-cantalejo-bogota.netlify.app/
 #ApartamentoEnVentaBogota #CantalejoSuba #InversionInmobiliaria #ViviendaFamiliarBogota #LaColinaSuba #VecyBienesRaices`
   }
 };
+

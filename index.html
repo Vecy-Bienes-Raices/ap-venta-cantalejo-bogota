@@ -26,7 +26,7 @@
       },
       "offers": {
         "@type": "Offer",
-        "price": "4700000000",
+        "price": "470000000",
         "priceCurrency": "COP"
       }
     }
@@ -337,7 +337,8 @@
       .slider-container {
         position: relative;
         width: 100%;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 4 / 3;
+        background-color: rgba(0, 0, 0, 0.2);
         border-radius: 15px;
         margin-bottom: 10px;
         overflow: hidden;
@@ -386,13 +387,46 @@
       .next-arrow {
         right: 15px;
       }
+      .thumbnail-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+      .thumb-arrow {
+        background: rgba(0, 0, 0, 0.4);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        width: 30px;
+        height: 60%;
+        min-height: 40px;
+        font-size: 16px;
+        cursor: pointer;
+        z-index: 2;
+        transition: background 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .thumb-arrow:hover {
+        background: rgba(0, 0, 0, 0.7);
+      }
       .thumbnail-container {
-        overflow: hidden;
+        flex: 1;
+        overflow-x: auto;
+        overflow-y: hidden;
         cursor: grab;
         user-select: none;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+      }
+      .thumbnail-container::-webkit-scrollbar {
+        display: none;
       }
       .thumbnail-container.grabbing {
         cursor: grabbing;
+        scroll-behavior: auto;
       }
       .thumbnail-strip {
         display: flex;
@@ -693,22 +727,23 @@
         position: absolute;
         top: 20px;
         right: 60px;
-        background: rgba(255, 255, 255, 0.2);
+        background: rgba(212, 175, 55, 0.85); /* Premium Gold */
         backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 1px solid #D4AF37;
         color: white;
         padding: 10px 20px;
         border-radius: 8px;
         text-decoration: none;
-        font-weight: 600;
+        font-weight: 700;
         transition: all 0.3s ease;
         display: flex;
         align-items: center;
         gap: 8px;
         z-index: 1002;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       }
       .lightbox-download:hover {
-        background: rgba(255, 255, 255, 0.4);
+        background: #D4AF37;
         transform: translateY(-2px);
       }
 
@@ -751,32 +786,36 @@
       </div>
     </div>
 
-    <div class="section-title">🎥 Recorrido Virtual</div>
-    <div class="glass-card video-wrapper">
+    <div class="section-title" id="title-recorrido">🎥 Video</div>
+    <div class="glass-card video-wrapper" id="card-recorrido">
       <video id="video-element" src="" controls playsinline preload="metadata">
         Tu navegador no soporta el tag de video.
       </video>
     </div>
 
-    <div class="section-title">📸 Galería de Fotos</div>
+    <div class="section-title">📸 Fotos</div>
     <div class="glass-card gallery-section">
       <div class="slider-container">
         <button class="slider-arrow prev-arrow">❮</button>
         <button class="slider-arrow next-arrow">❯</button>
       </div>
-      <div class="thumbnail-container">
-        <div class="thumbnail-strip"></div>
+      <div class="thumbnail-wrapper">
+        <button class="thumb-arrow thumb-prev-btn" aria-label="Anterior Miniatura">❮</button>
+        <div class="thumbnail-container">
+          <div class="thumbnail-strip"></div>
+        </div>
+        <button class="thumb-arrow thumb-next-btn" aria-label="Siguiente Miniatura">❯</button>
       </div>
     </div>
 
-    <div class="section-title">🔎 Detalles del Edificio</div>
+    <div class="section-title">🔎 Detalles</div>
     <div class="glass-card">
       <div id="specs-grid" class="specs-grid">
         <!-- Renderizado dinámico -->
       </div>
     </div>
 
-    <div class="section-title">🏡 Distribución del Edificio</div>
+    <div class="section-title">🏡 Características Internas</div>
     <div class="glass-card">
       <div id="internas-list" class="amenities-list">
         <!-- Renderizado dinámico -->
@@ -798,7 +837,7 @@
       </div>
     </div>
 
-    <div class="section-title">🗺️ Ubicación en el Mapa</div>
+    <div class="section-title">🗺️ Ubicación</div>
     <div class="glass-card map-container">
       <iframe
         id="map-iframe"
@@ -864,12 +903,17 @@
         }
 
         // --- Video ---
-        if (propertyConfig.multimedia.videoUrl) {
+        const titleRecorrido = document.getElementById("title-recorrido");
+        const cardRecorrido = document.getElementById("card-recorrido");
+        if (propertyConfig.multimedia.videoUrl && propertyConfig.multimedia.videoUrl !== "") {
             const videoEl = document.getElementById("video-element");
             videoEl.src = propertyConfig.multimedia.videoUrl;
             if (propertyConfig.multimedia.videoThumbnail) {
                 videoEl.poster = propertyConfig.multimedia.videoThumbnail;
             }
+        } else {
+            if (titleRecorrido) titleRecorrido.style.display = 'none';
+            if (cardRecorrido) cardRecorrido.style.display = 'none';
         }
 
 
@@ -930,8 +974,10 @@
         const thumbnailStrip = document.querySelector(".thumbnail-strip");
         const prevArrow = document.querySelector(".prev-arrow");
         const nextArrow = document.querySelector(".next-arrow");
+        const thumbPrevBtn = document.querySelector(".thumb-prev-btn");
+        const thumbNextBtn = document.querySelector(".thumb-next-btn");
 
-        let currentSlide = 0, isDown = false, isDragging = false, startX, transformX;
+        let currentSlide = 0, isDown = false, isDragging = false, startX, scrollLeft;
 
         function showSlide(index) {
           if (index >= slides.length) index = 0;
@@ -961,6 +1007,44 @@
 
         nextArrow.addEventListener("click", () => showSlide(currentSlide + 1));
         prevArrow.addEventListener("click", () => showSlide(currentSlide - 1));
+
+        // --- Funcionalidad de Arrastre para Miniaturas ---
+        thumbnailContainer.addEventListener('mousedown', (e) => {
+          isDown = true;
+          thumbnailContainer.classList.add('grabbing');
+          startX = e.pageX - thumbnailContainer.offsetLeft;
+          scrollLeft = thumbnailContainer.scrollLeft;
+        });
+        thumbnailContainer.addEventListener('mouseleave', () => {
+          isDown = false;
+          thumbnailContainer.classList.remove('grabbing');
+          setTimeout(() => isDragging = false, 50);
+        });
+        thumbnailContainer.addEventListener('mouseup', () => {
+          isDown = false;
+          thumbnailContainer.classList.remove('grabbing');
+          setTimeout(() => isDragging = false, 50);
+        });
+        thumbnailContainer.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - thumbnailContainer.offsetLeft;
+          if (Math.abs(x - startX) > 3) {
+             isDragging = true;
+          }
+          const walk = (x - startX) * 2; 
+          thumbnailContainer.scrollLeft = scrollLeft - walk;
+        });
+
+        // Botones de scroll miniatura
+        if (thumbPrevBtn && thumbNextBtn) {
+            thumbPrevBtn.addEventListener('click', () => {
+                thumbnailContainer.scrollBy({ left: -200, behavior: 'smooth' });
+            });
+            thumbNextBtn.addEventListener('click', () => {
+                thumbnailContainer.scrollBy({ left: 200, behavior: 'smooth' });
+            });
+        }
 
         const observer = new IntersectionObserver(
           (entries, self) => {
